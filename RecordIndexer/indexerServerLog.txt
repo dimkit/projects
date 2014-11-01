@@ -1,0 +1,24 @@
+Oct 31, 2014 7:18:35 PM server.ValidateUserHandler handle
+SEVERE: Successfully recieved the following username and password: test1 test1
+Oct 31, 2014 7:18:35 PM server.ValidateUserHandler handle
+SEVERE: Could not connect to database. Make sure main.sqlite is available in ./database
+database.helper.DatabaseException: Could not connect to database. Make sure main.sqlite is available in ./database
+	at database.helper.Database.startTransaction(Database.java:75)
+	at server.ServerFacade.validateUser(ServerFacade.java:32)
+	at server.ValidateUserHandler.handle(ValidateUserHandler.java:30)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)
+	at sun.net.httpserver.AuthFilter.doFilter(Unknown Source)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)
+	at sun.net.httpserver.ServerImpl$Exchange$LinkHandler.handle(Unknown Source)
+	at com.sun.net.httpserver.Filter$Chain.doFilter(Unknown Source)
+	at sun.net.httpserver.ServerImpl$Exchange.run(Unknown Source)
+	at sun.net.httpserver.ServerImpl$DefaultExecutor.execute(Unknown Source)
+	at sun.net.httpserver.ServerImpl$Dispatcher.handle(Unknown Source)
+	at sun.net.httpserver.ServerImpl$Dispatcher.run(Unknown Source)
+	at java.lang.Thread.run(Unknown Source)
+Caused by: java.sql.SQLException: No suitable driver found for jdbc:sqlite:database\main.sqlite
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at java.sql.DriverManager.getConnection(Unknown Source)
+	at database.helper.Database.startTransaction(Database.java:71)
+	... 12 more
+
